@@ -1,0 +1,45 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$_helper = $this->helper('Smartwave\Porto\Helper\Data');
+?>
+<div class="block newsletter">
+    <div class="content">
+        <form class="form subscribe"
+              novalidate
+              action="<?= $block->getFormActionUrl() ?>"
+              method="post"
+              data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+              id="newsletter-validate-detail">
+            <div class="field newsletter">
+                <label class="label" for="footer_newsletter"><span><?= __('Sign Up for Our Newsletter:') ?></span></label>
+                <div class="control">
+                    <input name="email" type="email" id="footer_newsletter"
+                           data-validate="{required:true, 'validate-email':true}" placeholder="<?= __('Email Address'); ?>"/>
+                </div>
+            </div>
+            <?php
+            $helper = $this->helper('Threecomerce\NewsletterPrivacy\Helper\Data');
+            if ($helper->getIsActive()): ?>
+                <div id="newsletter-privacy" class="form-check _required">
+                    <input type="checkbox" required="required" name="newsletter_privacy" id="newsletter_privacy" class="form-check-input">
+                    <label class="form-check-label" for="newsletter_privacy">
+                        <?= $helper->getLabelPrivacy(); ?>
+                    </label>
+                </div>
+            <?php endif; ?>
+            <div class="actions">
+                <button class="action subscribe primary" title="<?= __('Subscribe') ?>" type="submit">
+                    <span><?= __('Subscribe') ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <newsletter_privacy>
+            <active>
+                <view>1</view>
+                <is_required>1</is_required>
+                <default>1</default>
+                <order>0</order>
+            </active>
+            <text_privacy>
+                <view>1</view>
+                <is_required>1</is_required>
+                <default>Confermo di aver preso visione dell'informativa sul trattamento dei dati e acconsento al trattamento.</default>
+                <order>0</order>
+            </text_privacy>
+        </newsletter_privacy>
+    </default>
+</config>
